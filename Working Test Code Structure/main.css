@@ -1,0 +1,130 @@
+
+
+h2, li {
+    transition: font-size 0.3s ease, font-weight 0.3s ease;
+  /*  Delay, so the change isn't instant and the user actually notices  */
+  }
+  
+  h2.active {
+    font-size: 155%; 
+  }
+  
+  li.active {
+    font-weight: bold;
+  }
+  
+  ol {
+    font-size: 2em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 60px;
+  }
+  
+  li a {
+    display: block;
+  }
+  
+  
+  .container {
+    display: flex;  
+  }
+  
+  
+  .sidebar {
+    width: 250px;  
+    padding: 20px;  
+    background-color: #f0f0f0;  
+    position: fixed;  
+    top: 0;  
+    left: 0;  
+    height: 100vh;  
+    overflow-y: auto;  
+  }
+  
+  
+  .text {
+    flex: 1;  /* This makes the text content take the remaining space */
+    padding: 20px;  
+  }
+  
+  
+  .list {
+    list-style-type: none;  
+    padding: 0;  
+    margin: 0;  
+  }
+  
+  
+  .list li {
+    margin-bottom: 10px;  
+  }
+  
+  
+  .list a {
+    text-decoration: none;  
+    color: black;  
+  }
+  
+  
+  h2.active {
+    font-size: 155%;
+  }
+  
+  li.active a {
+    font-weight: bold;
+  }
+  
+  .skip-link {
+    position: absolute;
+    left: -1000px;
+    top: -1000px;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    z-index: 100;
+  }
+  
+  .skip-link:focus {
+    left: 0;
+    top: 0;
+  }
+  
+  /* Since sidenav is in same row as text in bootstrap grid, tried adding order class to make it appear above in mobile view. No luck */
+  
+  @media (max-width: 850px) {
+    ol {
+      display: flex;
+  /*     background-color: lightgray; */
+      
+    }
+    ol li {
+      font-size: 0.5em;
+      margin: 5px;
+    }
+    
+    ol li a {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sidebar {
+      overflow: hidden;
+      max-height: 80px;
+      width: 100%;
+  /*     everything is working now except the part of the sidebar extending off the right edge of its container. */
+      
+    }
+    .col-md-3 {
+    
+      max-height: 80px;
+      position: fixed;
+      z-index: 1000;
+      
+    }
+    
+    .col-md-9 {
+      margin-top: 80px;
+    }
+    
+  }
