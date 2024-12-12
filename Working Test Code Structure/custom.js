@@ -49,7 +49,7 @@ function initSideNav() {
                     <div class="left-nav">
                         <div class="nav-header">
                             <h5 id="on-this-page">${textOnThisPage}</h5>
-                            <div>
+                            <div class="toggle-wrapper">
                                 <button id="nav-toggle" title="${textToolTip}">
                                     <span>${textHide}</span><i id="toggle-icon" class="fas"></i>
                                 </button>
@@ -123,7 +123,7 @@ function initSideNav() {
             $heading.attr('id', headingId);
         }
 
-        var $link = $('<a></a>').attr('href', '#' + headingId).text(headingText);
+        var $link = $('<a class="sidenav-link"></a>').attr('href', '#' + headingId).text(headingText);
         var $li = $('<li></li>').append($link);
 
         if ($heading.is('h1')) {
@@ -259,3 +259,4 @@ function initSideNav() {
     });
    }
 };
+
